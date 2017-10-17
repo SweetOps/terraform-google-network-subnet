@@ -8,7 +8,7 @@ Manages a subnetwork within GCE.
 module "subnet-personal-vpc" {
   source            = "https://github.com/SweetOps/terraform-google-network-subnet.git?ref=master"
   name              = "${var.subnet_name}"
-  vpc               = "${module.personal-vpc.self_link}"
+  network           = "${var.vpc}"
   subnetwork-region = "${var.subnetwork_region}"
   ip_cidr_range     = "${var.ip_cidr_range}"
 }
